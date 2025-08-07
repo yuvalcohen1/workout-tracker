@@ -1,0 +1,16 @@
+# Node.js-related
+**/node_modules/
+**/dist/
+**/build/
+**/.env
+
+# OS-related
+.DS_Store
+
+# Logs
+**/logs/
+*.log
+
+# Editor-related
+.vscode/
+.idea/
