@@ -8,17 +8,8 @@ export const authenticateToken = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    // Get token from Authorization header or cookies
-    const authHeader = req.headers.authorization;
-    const cookieToken = req.cookies.token;
-    
-    let token: string | undefined;
-
-    if (authHeader && authHeader.startsWith('Bearer ')) {
-      token = authHeader.substring(7);
-    } else if (cookieToken) {
-      token = cookieToken;
-    }
+    // Get token from cookies
+    const token = req.cookies.token;
 
     if (!token) {
       res.status(401).json({ 

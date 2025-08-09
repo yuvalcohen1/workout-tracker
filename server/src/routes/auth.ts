@@ -45,7 +45,6 @@ authRrouter.post('/register', async (req: Request<{}, {}, RegisterRequest>, res:
             id: user.id,
             email: user.email,
           },
-          token,
         });
       } catch (error) {
         console.error('Registration error:', error);
@@ -97,7 +96,6 @@ authRrouter.post('/register', async (req: Request<{}, {}, RegisterRequest>, res:
         res.json({
           message: 'Login successful',
           user: userPayload,
-          token,
         });
       } catch (error) {
         console.error('Login error:', error);
